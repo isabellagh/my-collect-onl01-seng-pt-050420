@@ -1,7 +1,11 @@
 
 def my_collect(collection)
-  collection = []
-  my_collect(collection) do |lang|
-  lang.upcase
+  i = 0
+  collection_1 = []
+  while i < collection.length
+    collection_1 << yield(collection[i])
+    i += 1
+  end
+  collection_1
 end
-end
+
